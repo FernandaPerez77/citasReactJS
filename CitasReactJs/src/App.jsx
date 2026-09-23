@@ -1,11 +1,23 @@
+import { useState } from 'react';
+import "./App.css";
 
 function App() {
+  const [visible, setVisible] = useState(false); 
 
   return (
-    <>
-      <h1>Hola Mundo: Citas JS</h1>
-    </>
+    <main className="container"> 
+      <h1 className="titulo"> 
+        Administrador de Citas Veterinario
+      </h1>
+      <button
+        type='button'
+        className='btn-nueva-cita'
+        onClick={() => setVisible(true)}
+      >
+        <span className='btn-texto-nueva-cita'>Nueva Cita</span>
+      </button>
+    </main>
   )
 }
 
-export default App
+export default App;
