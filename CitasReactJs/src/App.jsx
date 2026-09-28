@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import "./App.css";
+import './css/App.css';
+import Formulario from './components/Formulario.jsx';
 
 function App() {
-  const [visible, setVisible] = useState(false); 
+  const [visible, setVisible] = useState(false);
 
   return (
-    <main className="container"> 
-      <h1 className="titulo"> 
-        Administrador de Citas Veterinario
+    <main className="container">
+      <h1 className="titulo">
+        Administrador de Citas <span className="titulo-bold">Veterinario</span>
       </h1>
       <button
         type='button'
@@ -16,8 +17,14 @@ function App() {
       >
         <span className='btn-texto-nueva-cita'>Nueva Cita</span>
       </button>
+      {visible && (
+        <Formulario
+          visible={visible}
+          setVisible={setVisible}
+        />
+      )}
     </main>
   )
 }
 
-export default App;
+export default App
